@@ -68,9 +68,7 @@ Sistema IoT:
 - Visualización: Web muestra datos y ubicación en mapa en vivo
 
 ## 🖥️ Estructura de Archivos
-```text
-├── .firebase/ 
-├── node_modules/              
+```text       
 ├── public/
 |   ├── ESP23
 |       └── main.ino     

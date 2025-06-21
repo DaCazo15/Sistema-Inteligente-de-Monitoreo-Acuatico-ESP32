@@ -28,7 +28,7 @@ Sistema IoT para monitorear cuerpos de agua que:
 ![Google Gemini](https://img.shields.io/badge/-Gemini_API-4285F4?logo=google&logoColor=white)
 
 ## 📌 Descripción
-Sistema IoT para monitorear cuerpos de agua que:
+Sistema IoT:
 1. **Mide parámetros** (pH, conductividad, temperatura)  
 2. **Geolocaliza** muestras con GPS  
 3. **Toma decisiones** con IA (Gemini) sobre dirección de botes  

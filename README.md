@@ -45,18 +45,21 @@ Sistema IoT para monitorear cuerpos de agua que:
 
 ## 🖥️ Estructura de Archivos
 ```text
-├── ESP32/
-│   ├── main.ino            # Código principal
-│   └── gps.txt            # Datos GPS de prueba
-├── servidor/
-│   ├── main.py            # Backend Flask
-│   └── config.py         # Configuración API
-├── public/                # Web App
+├── .firebase/ 
+├── node_modules/              
+├── public/
+|   ├── ESP23
+|       └── main.ino     
 │   ├── css/
 │   ├── js/
-│   ├── index.html        # Dashboard
-│   └── monitoring.html  # Mapa en tiempo real
-└── firebase-config/      # Auth y Hosting
+│   ├── py/
+│   ├── index.html       
+│   └── monitoring.html  
+├── .firebaserc
+├── database.rules.json
+├── firebase.json
+├── package-lock.json
+└── package.json    
 ```
 ## 🌟 Características Clave
 - Toma de decisiones con IA: Gemini analiza coordenadas para dirección óptima

@@ -1,96 +1,69 @@
-# 🌊 Sistema Inteligente de Monitoreo Acuático con ESP32
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='38' fill='%233498db'/%3E%3Cellipse cx='40' cy='35' rx='18' ry='15' fill='%23ecf0f1'/%3E%3Cellipse cx='40' cy='60' rx='22' ry='10' fill='%23ecf0f1'/%3E%3Ccircle cx='32' cy='35' r='3' fill='%232c3e50'/%3E%3Ccircle cx='48' cy='35' r='3' fill='%232c3e50'/%3E%3C/svg%3E" alt="Project logo"></a>
+</p>
 
-*Monitoreo en tiempo real de calidad de agua con toma de decisiones asistida por IA*
 
-## 📌 Descripción
-Sistema IoT para monitorear cuerpos de agua que:
-1. **Mide parámetros** (pH, conductividad, temperatura)  
-2. **Geolocaliza** muestras con GPS  
-3. **Toma decisiones** con IA (Gemini) sobre dirección de botes  
-4. **Visualiza datos** en dashboard web en tiempo real  
+<h1>Oil-Bot</h1>
+
+# Sistema Inteligente de Monitoreo Acuático 🌊🤖
+
+##  Descripción General
+
+**Oil-Bot** es un proyecto de robótica avanzada desarrollado para competir en la categoría **"Futuros Innovadores"** de las **Olimpiadas Mundiales de Robótica (WRO)**. Este sistema autónomo representa una solución integral para la preservación de ecosistemas acuáticos, combinando ingeniería mecánica, electrónica de precisión y desarrollo de software en la nube.
+
+El objetivo principal de Oil-Bot es realizar un monitoreo *in situ* de la calidad del agua, detectando anomalías químicas y físicas que podrían indicar contaminación, permitiendo una respuesta rápida ante desastres ambientales.
+
+## 🚀 Características Destacadas
+
+La complejidad técnica de Oil-Bot reside en su capacidad para integrar múltiples sistemas sensoriales y de comunicación en tiempo real:
+
+*   **🔬 Análisis Multiparamétrico**: Equipado con sensores industriales para medir:
+    *   **pH**: Nivel de acidez o alcalinidad del agua.
+    *   **TDS (Sólidos Disueltos Totales)**: Indicador clave de la pureza del agua.
+    *   **Temperatura**: Medición precisa mediante termopar Tipo K (MAX6675) para compensación de datos.
+*   **🛰️ Navegación y Geolocalización**: Utiliza un módulo GPS dedicado para geoetiquetar cada muestra tomada, permitiendo la creación de mapas de calor de contaminación.
+*   **☁️ Conectividad IoT Segura**: Transmisión de datos encriptada (HTTPS) hacia **Supabase**, permitiendo el almacenamiento histórico y el análisis remoto.
+*   **🎮 Control Dual**: Sistema capaz de operar de forma autónoma o recibir comandos de dirección remotos desde la nube, adaptándose a entornos dinámicos.
+
+## 🛠️ Arquitectura Técnica
+
+El cerebro del sistema es un **ESP32**, elegido por su potencia de procesamiento dual-core y capacidades de conectividad Wi-Fi/Bluetooth.
+
+### Stack de Tecnologías
+*   **Firmware**: C++ (Arduino Framework).
+*   **Backend**: Supabase (PostgreSQL + REST API).
+*   **Protocolos**: HTTP/HTTPS, UART (GPS), SPI (Termopar), ADC (Sensores analógicos).
+*   **Librerías Clave**: `ArduinoJson`, `TinyGPSPlus`, `WiFiClientSecure`.
+
+### Estructura de Datos
+El sistema gestiona dos flujos de información críticos:
+1.  **Telemetría GPS**: Latitud, Longitud y Altitud.
+2.  **Datos Ambientales**: Valores de pH, TDS y Temperatura compensada.
+
+##  Importancia e Innovación
+
+Oil-Bot no es solo un robot; es una propuesta tecnológica para enfrentar el cambio climático y la contaminación hídrica. Su desarrollo implicó resolver desafíos complejos como:
+*   La gestión asíncrona de peticiones HTTP sin bloquear el control de motores.
+*   La calibración y compensación térmica de sensores en tiempo real.
+*   La integración de bases de datos relacionales en sistemas embebidos.
+
+Este proyecto demuestra cómo la robótica educativa puede trascender el aula y ofrecer soluciones tangibles a problemas globales.
+
+---
+## 🏆 Sobre la Competencia
+
+La **World Robot Olympiad (WRO)** es una competencia global que inspira a los jóvenes a interesarse por la ciencia y la tecnología. La categoría **Future Innovators** desafía a los equipos a desarrollar proyectos robóticos innovadores que resuelvan problemas del mundo real.
+
+## 👥 Equipo
+
+* **Alberto Medina** - Desarrollador Principal
+*   **Ing. Daniel Cazorla** - Colaborador
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 📜 Licencia
 
-### Frontend Web
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
+Este proyecto está bajo la Licencia MIT.
 
-### Backend & IoT
-![C++](https://img.shields.io/badge/-C++-00599C?logo=c%2B%2B&logoColor=white)
-![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white)
-![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=black)
-![Supabase](https://img.shields.io/badge/-Supabase-3ECF8E?logo=supabase&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/-Gemini_API-4285F4?logo=google&logoColor=white)
-
-## 📌 Descripción
-Sistema IoT:
-1. **Mide parámetros** (pH, conductividad, temperatura)  
-2. **Geolocaliza** muestras con GPS  
-3. **Toma decisiones** con IA (Gemini) sobre dirección de botes  
-4. **Visualiza datos** en dashboard web en tiempo real  
-
-
----
-
-## ⚙️ Componentes Principales
-
-### 🔌 Hardware (ESP32)
-| Componente               | Función                                  |
-|--------------------------|------------------------------------------|
-| Sensores de calidad agua | pH, conductividad, temperatura           |
-| 2 Motores sumergibles    | Movimiento del bote                      |
-| Driver dual L298N        | Control de motores                       |
-| Módulo GPS NEO-6M        | Geolocalización                          |
-
-### 🌐 Software
-| Componente          | Tecnología          | Función                                  |
-|---------------------|---------------------|------------------------------------------|
-| Backend            | Python              | Procesamiento de datos e integración con Gemini API |
-| Frontend Web       | HTML/CSS/JS         | Dashboard y mapa en tiempo real          |
-| Autenticación      | Firebase Auth       | Gestión de usuarios                     |
-| Base de datos      | Supabase            | Almacenamiento histórico                |
-| Hosting            | Firebase Hosting    | Despliegue de la web                    |
-
----
-
-## 🔄 Flujo del Sistema
-- Recolección: ESP32 mide parámetros y GPS
-
-- Transmisión: Envía datos a Supabase via WiFi
-
-- Procesamiento: Backend consulta a Gemini API con coordenadas
-
-- Acción: ESP32 recibe decisión (1/0) y controla motores
-
-- Visualización: Web muestra datos y ubicación en mapa en vivo
-
-## 🖥️ Estructura de Archivos
-```text       
-├── public/
-|   ├── ESP23
-|       └── main.ino     
-│   ├── css/
-│   ├── js/
-│   ├── py/
-│   ├── index.html       
-│   └── monitoring.html  
-├── .firebaserc
-├── database.rules.json
-├── firebase.json
-├── package-lock.json
-└── package.json    
-```
-## 🌟 Características Clave
-- Toma de decisiones con IA: Gemini analiza coordenadas para dirección óptima
-
-- Mapa interactivo: Visualización en tiempo real con Leaflet/Google Maps
-
-- Control autónomo: Motores se ajustan según análisis de calidad de agua
-
-- Autenticación segura: Firebase Auth para acceso al dashboard
-
-📜 Licencia
-MIT License - Ing. Daniel Cazorla / Dcazorla.0190@gmail.com
+**Contacto:** `Dcazorla.0190@gmail.com`

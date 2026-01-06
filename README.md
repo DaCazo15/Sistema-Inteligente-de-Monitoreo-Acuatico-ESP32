@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='38' fill='%233498db'/%3E%3Cellipse cx='40' cy='35' rx='18' ry='15' fill='%23ecf0f1'/%3E%3Cellipse cx='40' cy='60' rx='22' ry='10' fill='%23ecf0f1'/%3E%3Ccircle cx='32' cy='35' r='3' fill='%232c3e50'/%3E%3Ccircle cx='48' cy='35' r='3' fill='%232c3e50'/%3E%3C/svg%3E" alt="Project logo"></a>
+ <img width=200px height=200px src="https://i.postimg.cc/MT4LGTBX/oil-bot.png"></a>
 </p>
 
 
